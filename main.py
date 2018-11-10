@@ -1,14 +1,15 @@
 from flask import (
-    Flask
-)
+    Flask,
+    Response)
 import ff.ff_api_translator as api
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def getTeams():
-    return api.get_teams()
+@app.route('/api')
+def get_teams():
+    resp = Response(api.get_teams(), 200, mimetype='application/json')
+    return resp
 
 
 if __name__ == '__main__':
