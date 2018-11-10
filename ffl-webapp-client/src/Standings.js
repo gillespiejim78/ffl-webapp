@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import fetchFflData from './FflApi';
+import { Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 
 class Standings extends Component {
     constructor(props) {
@@ -26,11 +27,18 @@ class Standings extends Component {
         }
 
         return ( 
-        <div> 
-            {standings.map(
-                team => <div key={team.teamId}>{team.teamName}</div>
-            )} 
-        </div>
+        <Paper> 
+            <Table>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>Team Name</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {standings.map(team => <TableRow><TableCell>{team.teamName}</TableCell></TableRow>)}
+                </TableBody>
+            </Table>
+        </Paper>
         );
     }
 }
