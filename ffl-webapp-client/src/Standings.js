@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import fetchFflData from './FflApi';
+import { fetchRankings } from './FflApi';
 import { Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 
 class Standings extends Component {
@@ -14,7 +14,7 @@ class Standings extends Component {
     
     componentDidMount() {
         this.setState({isLoading: true});
-        fetchFflData().then(
+        fetchRankings().then(
             data => this.setState({standings: data, isLoading: false})
         )
     }
