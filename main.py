@@ -17,6 +17,7 @@ def get_current_scoreboard():
     resp = Response(api.get_current_scoreboard(), 200, mimetype='application/json')
     return resp
 
+
 if __name__ == '__main__':
     print(api.get_current_scoreboard())
     print(api.get_teams())

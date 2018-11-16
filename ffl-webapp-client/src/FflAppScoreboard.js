@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { fetchScoreboard } from './FflApi';
-import { Card } from '@material-ui/core';
 import FflAppMatchup from './FflAppMatchup';
+import { CircularProgress } from '@material-ui/core';
 
 const divStyle = {
     display: 'flex'
@@ -30,7 +30,7 @@ class FflAppScoreboard extends Component {
         const { scoreboard, isLoading } = this.state;
         
         if (isLoading) {
-            return <p>Loading...</p>
+            return <CircularProgress/>;
         }
 
         return ( 

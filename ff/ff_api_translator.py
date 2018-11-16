@@ -9,6 +9,9 @@ def get_teams():
         team_info = {}
         team_info['teamName'] = team['teamLocation'] + ' ' + team['teamNickname']
         team_info['teamId'] = team['teamId']
+        team_info['record'] = str(team['record']['overallWins']) + '-' + \
+                              str(team['record']['overallLosses']) + '-' + \
+                              str(team['record']['overallTies'])
         team_rank = team['overallStanding'] - 1
         dict_list[team_rank] = team_info
 

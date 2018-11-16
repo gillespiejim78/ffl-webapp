@@ -32,10 +32,15 @@ class Standings extends Component {
                 <TableHead>
                     <TableRow>
                         <TableCell>Team Name</TableCell>
+                        <TableCell>Team Record</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {standings.map(team => <TableRow><TableCell>{team.teamName}</TableCell></TableRow>)}
+                    {standings.map(team => 
+                    <TableRow>
+                        <TableCell>{team.teamName}</TableCell>
+                        <TableCell>{team.record}</TableCell>
+                    </TableRow>)}
                 </TableBody>
             </Table>
         </Paper>
