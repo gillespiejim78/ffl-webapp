@@ -28,7 +28,7 @@ class FflAppHeader extends Component {
                 
             </AppBar>
             <Route exact path='/' component={FflAppHome}/>
-            <Route path='/standings' component={Standings}/>
+            {/*<Route path='/standings' component={Standings}/>*/}
             </div>
             </Router>
          );

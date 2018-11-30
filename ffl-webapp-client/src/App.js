@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import { MuiThemeProvider, createMuiTheme, Grid, Paper } from '@material-ui/core';
 import FflAppHeader from './FflAppHeader';
 import FflAppScoreboard from './FflAppScoreboard';
+import FflAppMessageBoard from './FflAppMessageBoard';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,6 +19,14 @@ class App extends Component {
             <MuiThemeProvider theme={theme}>
                 <FflAppScoreboard/>
                 <FflAppHeader/>
+                <Grid container>
+                    <Grid item xs={9}>
+                        <Paper>Hello, GSL</Paper>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <FflAppMessageBoard/>
+                    </Grid>
+                </Grid>
             </MuiThemeProvider>
         );
     }

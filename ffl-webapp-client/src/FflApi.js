@@ -9,4 +9,8 @@ export const fetchScoreboard = () =>
     fetch('/api/scoreboard')
         .then(response => response.json());
 
-export default { fetchRankings, fetchScoreboard };
+export const fetchMessageBoard = () =>
+    fetch('/api/messages')
+        .then(response => response.json());
+
+export default { fetchRankings, fetchScoreboard, fetchMessageBoard };

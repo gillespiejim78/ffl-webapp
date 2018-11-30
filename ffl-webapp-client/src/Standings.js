@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchRankings } from './FflApi';
-import { Paper, Table, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
+import { Paper, Table, TableHead, TableRow, TableCell, TableBody, CircularProgress } from '@material-ui/core';
 
 class Standings extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class Standings extends Component {
         const {standings, isLoading} = this.state;
 
         if (isLoading) {
-            return <p>Loading...</p>;
+            return <CircularProgress/>;
         }
 
         return ( 
