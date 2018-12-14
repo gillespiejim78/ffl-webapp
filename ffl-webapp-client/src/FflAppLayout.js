@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { AppBar, Toolbar, Tabs, Tab } from '@material-ui/core';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { AppBar, Toolbar, Tabs, Tab, Grid } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import logo from './gslLogo.jpg';
 import './FflAppHeader.css';
-import Standings from './Standings';
-import FflAppHome from './FflAppHome';
+import FflAppMessageBoard from './FflAppMessageBoard';
+import FflAppScoreboard from './FflAppScoreboard';
 
 
-class FflAppHeader extends Component {
+class FflAppLayout extends Component {
     constructor(props) {
         super(props);
         this.state = {  }
     }
     render() { 
+        const { children } = this.props;
+
         return ( 
-            <Router>
             <div>
+            <FflAppScoreboard/>
             <AppBar position='static'>
                 <Toolbar>
                     <img src={logo} className="FflApp-logo"/>
@@ -27,12 +29,18 @@ class FflAppHeader extends Component {
                 </Toolbar>
                 
             </AppBar>
-            <Route exact path='/' component={FflAppHome}/>
-            {/*<Route path='/standings' component={Standings}/>*/}
+
+            <Grid container>
+                <Grid item xs={9}>
+                    {children}
+                </Grid>
+                <Grid item xs={3}>
+                    <FflAppMessageBoard/>
+                </Grid>
+            </Grid>
             </div>
-            </Router>
          );
     }
 }
  
-export default FflAppHeader;
+export default FflAppLayout;
