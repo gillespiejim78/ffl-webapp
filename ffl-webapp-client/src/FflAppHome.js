@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FflAppBlog from './FflAppBlog';
 
 class FflAppHome extends Component {
     constructor(props) {
@@ -7,9 +8,7 @@ class FflAppHome extends Component {
     }
     render() { 
         return ( 
-            <div>
-                Home
-            </div>
+            <FflAppBlog/>
          );
     }
 }
